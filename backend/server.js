@@ -1,7 +1,12 @@
 import express from "express";
 
-const app = express;
+const app = express();
 
-app.listen(5000, () => {
-    console.log("serve started at http://localhost:3000")
+app.get("/", (req, res) => {
+    res.send('Now built a crud app')
+})
+
+app.listen(5001, function (err) {
+    if (err) console.log("Error in server setup")
+    console.log("Server listening on Port 5001");
 })
